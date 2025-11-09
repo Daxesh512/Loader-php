@@ -1,0 +1,20 @@
+<?php
+
+include_once 'Loader.php';
+
+# Sample 1 - Using class method 'done()'
+// Loader::start(['heavy'], ['done']);
+
+# Sample 2 - Using Closure (different animation type)
+// Loader::type('roller');
+// Loader::start(['heavy'], function() {
+//     return Loader::view('process completed successfully');
+// }); 
+
+# Sample 3 - Using Closure
+Loader::start(['heavy'], fn() => show('process completed successfully') ); 
+
+
+function show($message) {
+    return $message.PHP_EOL.PHP_EOL;
+}
